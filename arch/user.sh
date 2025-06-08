@@ -1,16 +1,13 @@
 #!/usr/bin/sh
 
-username="marengo"
+username=$1
 
 echo "Creating user $username"
 useradd --create-home $username
 passwd $username
 
-echo "Refreshing pacman caches"
-pacman -Syu --noconfirm
-
 echo "Installing software"
-pacman -S --noconfirm sudo nvim which base-devel git
+pacman -S --noconfirm sudo nvim which
 
 echo "Adding user $username to sudoers file"
 echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
@@ -24,7 +21,3 @@ echo "Detecting windows username"
 IFS='\' read -ra userbits <<< $(WHOAMI.exe)
 win_username=${userbits[1]}
 echo $win_username
-
-echo "Creating a config symlink for %appdata% in ~/.win.config"
-host_home=$(wslpath $(cmd.exe /C "echo %USERPROFILE%" 2>/dev/null | tr -d '\r'))
-ln -s "$host_home/AppData/Roaming" "/home/$username/.win.config"

@@ -5,8 +5,8 @@ echo "Installing WSL Arch Distro"
 wsl --install archlinux --name "arch" --no-launch
 wsl --set-default "arch"
 
-echo "Running Setup Script"
-wsl -e ./arch.setup.sh
+echo "Running Setup Script for Arch"
+wsl -e ./arch/_boostrap.sh "marengo"
 
 echo "Setting up default user"
 wsl --manage arch --set-default-user marengo
