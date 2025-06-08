@@ -6,6 +6,9 @@ pacman -Syu --noconfirm
 echo "Installing git"
 pacman -S --noconfirm git
 
+echo "Setting up HTTPS credentials manager for git"
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+
 staging_dir=$(mktemp -d)
 pushd .
 

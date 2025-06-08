@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pacman -Sy --noconfirm less
+pacman -Sy --noconfirm less openssh base-devel
 
