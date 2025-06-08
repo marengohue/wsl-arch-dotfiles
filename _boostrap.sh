@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Refreshing pacman caches"
 pacman -Syu --noconfirm
 
