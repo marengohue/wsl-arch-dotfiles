@@ -1,0 +1,6 @@
+[general]
+working_directory = "/home/marengo"
+live_config_reload = true
+
+[window]
+dynamic_padding = true
