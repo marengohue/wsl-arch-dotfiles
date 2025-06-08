@@ -7,7 +7,8 @@ wsl --set-default "arch"
 
 echo "Downloading bootstrap script into a temp location"
 $bootstrap = New-TemporaryFile
-((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/marengohue/wsl-arch-dotfiles/refs/heads/main/_boostrap.sh')) > $bootstrap.FullName
+$r = wget 'https://raw.githubusercontent.com/marengohue/wsl-arch-dotfiles/refs/heads/main/_boostrap.sh'
+echo $r.Content | out-file -Encoding utf8 $bootstrap.FullName
 
 echo "Running Setup Script for Arch"
 pushd .
