@@ -1,3 +1,4 @@
 #!/usr/bin/sh
 
-pacman -Sy --noconfirm ripgrep fd-find
+echo "Installing rg/fd to use with nvim"
+pacman -Sy --noconfirm ripgrep fd

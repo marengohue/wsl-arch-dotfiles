@@ -17,9 +17,8 @@ cd wsl-arch-dotfiles/scripts
 sh user.sh $1
 sh home.sh $1
 sh tmux.sh $1
-sh alacritty.sh $1
 sh nvim.sh $1
 
 echo "Cleaning up temp files"
 popd
-# rm $staging_dir -rf
+rm $staging_dir -rf
