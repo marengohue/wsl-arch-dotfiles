@@ -6,3 +6,6 @@ dynamic_padding = true
 
 [terminal]
 shell = "wsl"
+
+[font]
+normal = { family = "FiraCode Nerd Font" }
